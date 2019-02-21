@@ -50,4 +50,5 @@ Button | Description
 -------|------------
 Copy All | Copy all the items (without `MyBox` script) in your inventory in a folder named by the name of the object (**Warning**: if the object contains no-copy items, the whole copy will fail silently)
 Delete All | Delete all items from the object (**Warning**: no confirmation asked - once you click the button, all content is deleted)
+Delete Me | Delete **.MyBox** script from the object
 Back | Return to the listing dialog

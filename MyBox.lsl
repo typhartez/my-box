@@ -1,6 +1,9 @@
-// Typhaine Artez 2018
+// MyBox 1.1 - Typhaine Artez 2018-2019
 // Provided under Creative Commons Attribution-Non-Commercial-ShareAlike 4.0 International license.
 // Please be sure you read and adhere to the terms of this license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+// Version 1.1
+// - added option to delete .MyBox script from the object
 
 list TYPE2STRING = [
     INVENTORY_NONE, "unknown",
@@ -89,7 +92,7 @@ dlgList() {
 
 dlgActions() {
     dlgcur = "ACTIONS";
-    list btns = [ "Copy All", "Delete All", "Back" ];
+    list btns = [ "Copy All", "Delete All", "Delete Me", "Back", " ", " " ];
     dlg("\nPerform actions on items.", btns);
 }
 
@@ -198,6 +201,10 @@ default {
                     llRemoveInventory(llList2String(items, i));
                 llResetScript();
             }
+            else if (msg == "Delete Me") {
+                llRemoveInventory(llGetScriptName());
+                return;
+            }
             else if (msg == "Back") {
                 dlgList();
             }
@@ -272,4 +279,3 @@ state update {
         state default;
     }
 }
-
